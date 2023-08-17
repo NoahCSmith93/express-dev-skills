@@ -1,0 +1,12 @@
+<%- include("../partials/header") %>
+
+<h3><%= skill.skill %></h3>
+<h4>Learned: <%= skill.learned ? "Yes" : "Not yet" %></h4>
+<h4>
+    Confidence: 
+    <% for (let i = skill.confidence; i > 0; i--) { %>
+        "|"    
+    <% }); %>
+</h4>
+
+<%- include("../partials/footer") %>
