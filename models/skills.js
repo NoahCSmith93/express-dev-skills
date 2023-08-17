@@ -29,6 +29,7 @@ function create(newSkill) {
 }
 
 function deleteSkill(id) {
+    id = parseInt(id)
     console.log("This is the id passed into deleteSkill", id)
     skills.splice(skills.findIndex(skill => skill.id === id), 1)
 }
