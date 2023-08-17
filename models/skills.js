@@ -8,7 +8,9 @@ const skills = [
 
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create,
+    delete: deleteSkill
 }
 
 function getAll() {
@@ -18,4 +20,15 @@ function getAll() {
 function getOne(id) {
     id = parseInt(id)
     return skills.find(skill => skill.id === id)
+}
+
+function create(newSkill) {
+    newSkill.id = Date.now() % 1000000
+    newSkill.learned = false
+    skills.push(newSkill)
+}
+
+function deleteSkill(id) {
+    console.log("This is the id passed into deleteSkill", id)
+    skills.splice(skills.findIndex(skill => skill.id === id), 1)
 }
